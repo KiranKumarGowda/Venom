@@ -6,7 +6,11 @@ on:
       - dev
 jobs:
   test:
-    environment: testing
+    environment: opt
+    env:
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME}}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
